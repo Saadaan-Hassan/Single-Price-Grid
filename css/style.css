@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+/* -----CSS Reset----- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+/* ------CSS Custom Variables----- */
+:root {
+  /* Colors */
+  --color-primary-900: hsl(179, 62%, 43%);
+  --color-primary-800: hsla(178.8, 68.9%, 42.9%, 0.73);
+  --color-primary-700: hsl(71, 73%, 54%);
+
+  --color-neutral-300: hsl(218, 22%, 67%);
+  --color-neutral-200: hsl(204, 43%, 93%);
+  --color-neutral-100: hsl(0, 0%, 100%);
+  /* Font Families */
+  --ff-primary: "Karla", sans-serif;
+
+  /* Font Sizes */
+  --fs-large: 2rem; /*32px*/
+  --fs-medium: 1rem; /*16px*/
+  --fs-small: 0.875rem; /*14px*/
+
+  /* Font Weights */
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+body {
+  font-family: var(--ff-primary);
+}
+
+.grid-container {
+  --radius: 10px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.8fr 1fr;
+  width: 45vw;
+  margin: 4rem auto;
+  border-radius: var(--radius);
+  box-shadow: 2px 2px 20px hsl(224.2, 16.8%, 77.8%);
+}
+
+.grid-items {
+  padding: 2rem;
+}
+
+.grid-items h1,
+.grid-items h2 {
+  margin-bottom: 1rem;
+}
+
+.grid-items p {
+  line-height: 1.8rem;
+  padding-top: 0.5rem;
+}
+
+.community-section {
+  grid-column: 1 / span 2;
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.subscription-section {
+  border-bottom-left-radius: var(--radius);
+}
+
+.about-section {
+  border-bottom-right-radius: var(--radius);
+}
+
+.about-section ul li {
+  list-style: none;
+  line-height: 1.4rem;
+}
+/* -----Attributes----- */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* -----Utility Classes----- */
+
+.flex-all-center {
+  display: flex;
+  align-items: center;
+}
+
+/* Font Color */
+.fc-primary-900 {
+  color: var(--color-primary-900);
+}
+
+.fc-primary-700 {
+  color: var(--color-primary-700);
+}
+
+.fc-neutral-300 {
+  color: var(--color-neutral-300);
+}
+
+.fc-neutral-200 {
+  color: var(--color-neutral-200);
+}
+
+/* Background Colors */
+.bc-primary-900 {
+  background-color: var(--color-primary-900);
+}
+
+.bc-primary-800 {
+  background-color: var(--color-primary-800);
+}
+
+.bc-primary-700 {
+  background-color: var(--color-primary-700);
+}
+
+.bc-neutral-200 {
+  background-color: var(--color-neutral-200);
+}
+
+.bc-neutral-100 {
+  background-color: var(--color-neutral-100);
+}
+
+/* Font Weights */
+
+.bold {
+  font-weight: var(--fw-bold);
+}
+
+.regular {
+  font-weight: var(--fw-regular);
+}
+
+/* Font Sizes */
+.fs-large {
+  font-size: var(--fs-large);
+}
+
+.fs-medium {
+  font-size: var(--fs-medium);
+}
+
+.fs-small {
+  font-size: var(--fs-small);
+}
+
+/* Button */
+.btn {
+  padding: 0.875rem 4rem;
+  margin: 1.4rem 0 0;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px hsla(224, 5.9%, 49.6%, 0.64);
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: hsl(71.1, 56.2%, 49.2%);
+}
+
+/* Opacity */
+.opacity {
+  opacity: 0.6;
+}
+
+/* Media Quries */
+@media screen and (max-width: 970px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.8fr 0.8fr;
+    width: 85vw;
+  }
+
+  .grid-items p {
+    font-size: var(--fs-small);
+  }
+
+  .community-section {
+    grid-column: 1;
+  }
+
+  .community-section h1 {
+    font-size: 20px;
+  }
+
+  .subscription-section {
+    border-radius: 0;
+  }
+
+  .about-section {
+    border-bottom-left-radius: var(--radius);
+  }
+}
